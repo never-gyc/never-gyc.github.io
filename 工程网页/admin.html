@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文图管理系统</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <h1>文图管理系统</h1>
+        
+        <form id="scripture-form" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="scripture-text">文图内容</label>
+                <textarea id="scripture-text" name="scripture-text" rows="4" placeholder="输入文图内容" required></textarea>
+                <small>提示：使用 &lt;br&gt; 来添加换行，使用 [first-letter]X[/first-letter] 来标记首字母大写</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="scripture-reference">文图出处</label>
+                <input type="text" id="scripture-reference" name="scripture-reference" placeholder="例如：约翰福音 3:16" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="background-image">背景图片</label>
+                <input type="file" id="background-image" name="background-image" accept="image/*">
+                <div class="preview-container" id="image-preview">
+                    <p>图片预览区域</p>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="background-music">背景音乐</label>
+                <input type="file" id="background-music-upload" name="background-music" accept="audio/*">
+                <div class="audio-controls" id="audio-preview">
+                    <p>音频预览区域</p>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="background-color">背景颜色</label>
+                <div class="color-inputs">
+                    <div>
+                        <label for="color-top">顶部颜色</label>
+                        <input type="color" id="color-top" name="color-top" value="#a7c5e6">
+                    </div>
+                    <div>
+                        <label for="color-bottom">底部颜色</label>
+                        <input type="color" id="color-bottom" name="color-bottom" value="#2a5298">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">保存设置</button>
+                <button type="button" class="btn btn-secondary" id="preview-btn">预览效果</button>
+            </div>
+        </form>
+    </div>
+    
+    <script src="js/admin.js"></script>
+</body>
+</html>
